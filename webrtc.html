@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./webrtc.js"></script>
+<style>
+#localVideo{
+	width:25%;
+	height:25%;
+	border:1px solid red;
+	position:fixed;
+	bottom:0px;
+	right:20px;
+}
+#remoteVideo{
+	width:80%;
+	height:50%;
+	border:1px solid green;
+	position:absolute;
+	top:110px;
+	bottom:0px;
+	left:10px;
+}
+</style>
+<head>
+</head>
+<body>
+<h3 style="color:red;" id="status">Offline</h3>
+<video id="localVideo" src="" muted></video>
+<video id="remoteVideo" src="" autoplay></video><br/>
+<button onclick="signal();">Start</button>
+<button onclick="getMedia(true);">Call</button>
+<button onclick="getMedia(false);">Answer</button>
+<script>
+local=document.getElementById("localVideo");
+remote=document.getElementById("remoteVideo");
+state=document.getElementById("status");
+inco=document.getElementById("inco");
+</script>
+</body>
+</html>
